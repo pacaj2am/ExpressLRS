@@ -1248,7 +1248,7 @@ static void setupSerial()
         return;
     }
 
-    if (config.GetSerialProtocol() == PROTOCOL_SBUS || config.GetSerialProtocol() == PROTOCOL_INVERTED_SBUS || config.GetSerialProtocol() == PROTOCOL_DJI_RS_PRO)
+    if (config.GetSerialProtocol() == PROTOCOL_SBUS || config.GetSerialProtocol() == PROTOCOL_INVERTED_SBUS || config.GetSerialProtocol() == PROTOCOL_DJI_RS_PRO || config.GetSerialProtocol() == PROTOCOL_SBUS_CH5_LAST || config.GetSerialProtocol() == PROTOCOL_INVERTED_SBUS_CH5_LAST)
     {
         sbusSerialOutput = true;
         serialBaud = 100000;
@@ -1265,7 +1265,7 @@ static void setupSerial()
         serialBaud = 19200;
     }
 #endif
-    bool invert = config.GetSerialProtocol() == PROTOCOL_SBUS || config.GetSerialProtocol() == PROTOCOL_INVERTED_CRSF || config.GetSerialProtocol() == PROTOCOL_DJI_RS_PRO;
+    bool invert = config.GetSerialProtocol() == PROTOCOL_SBUS || config.GetSerialProtocol() == PROTOCOL_INVERTED_CRSF || config.GetSerialProtocol() == PROTOCOL_DJI_RS_PRO || config.GetSerialProtocol() == PROTOCOL_SBUS_CH5_LAST;
 
 #ifdef PLATFORM_STM32
 #if defined(TARGET_R9SLIMPLUS_RX)
